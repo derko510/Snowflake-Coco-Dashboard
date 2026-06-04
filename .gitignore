@@ -1,0 +1,13 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# Snowflake CLI deploy bundle
+output/
+
+# Local secrets — NEVER commit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store

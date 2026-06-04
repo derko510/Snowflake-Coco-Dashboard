@@ -1,0 +1,24 @@
+definition_version: 2
+entities:
+  PMC_RESEARCH_DASHBOARD:
+    type: streamlit
+    identifier:
+      name: PMC_RESEARCH_DASHBOARD
+      database: PMC_ANALYSIS
+      schema: PUBLIC
+    query_warehouse: COMPUTE_WH
+    runtime_name: SYSTEM$ST_CONTAINER_RUNTIME_PY3_11
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    main_file: streamlit_app.py
+    # No pyproject.toml in artifacts: the app uses only pre-installed packages
+    # (streamlit, pandas, altair), so no External Access Integration is needed.
+    # The theme config + bundled fonts ride along so branding works in SiS.
+    artifacts:
+      - streamlit_app.py
+      - .streamlit/config.toml
+      - static/Inter-Regular.ttf
+      - static/Inter-Medium.ttf
+      - static/Inter-SemiBold.ttf
+      - static/Inter-Bold.ttf
+      - static/JetBrainsMono-Regular.ttf
+      - static/JetBrainsMono-Medium.ttf
